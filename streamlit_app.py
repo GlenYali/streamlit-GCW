@@ -36,7 +36,7 @@ with st.sidebar:
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This web app is adopted from [Qiusheng Wu](https://github.com/giswqs). 
+        This web app is created for the purpose Geospatial Coral Watch (GeoCoW) and was adopted from [Qiusheng Wu](https://github.com/giswqs). 
     """
     )
 
