@@ -4,39 +4,28 @@ import leafmap
 import leafmap.foliumap as leafmap
 import streamlit as st
 
-from requests.auth import HTTPBasicAuth
-# import helper functions to make Basic request to Planet API
-
-PLANET_API_KEY = os.getenv("31848fad673b405f9c7eee934f1d2ad3")
-# Setup the API Key from the `PL_API_KEY` environment variable
-
-BASE_URL = 'https://api.planet.com/basemaps/v1/mosaics'
-
-if PLANET_API_KEY is None:
-  PLANET_API_KEY = '12345'
-#pass in your API key
-
-auth = HTTPBasicAuth(PLANET_API_KEY, '')
-# HTTPBasicAuth() wants a username & password; you can pass an empty string for the password
-
-res = requests.get(url=BASE_URL, auth=auth)
-
-print(res.status_code)
-# make a request to the Basemaps API and test the response
-
 def app():
 
     st.title("Planet Imagery")
 
-    os.environ["31848fad673b405f9c7eee934f1d2ad3"] = "12345"
-    tile_format = "ipyleaflet"
+    from requests.auth import HTTPBasicAuth
+# import helper functions to make Basic request to Planet API
 
-    if os.environ.get("USE_FOLIUM") is not None:
-        tile_format = "folium"
-        # leafmap.planet_monthly()
-        monthly_tiles = leafmap.planet_monthly_tiles(tile_format=tile_format)
-        for tile in monthly_tiles:
-            print(tile)
+    PLANET_API_KEY = os.getenv("31848fad673b405f9c7eee934f1d2ad3")
+# Setup the API Key from the `PL_API_KEY` environment variable
 
-    m = leafmap.Map()
-    m.add_planet_by_month(year=2022, month=7, api_key="31848fad673b405f9c7eee934f1d2ad3")
+    BASE_URL = 'https://api.planet.com/basemaps/v1/mosaics'
+
+    if PLANET_API_KEY is None:
+       PLANET_API_KEY = '12345'
+#pass in your API key
+
+    auth = HTTPBasicAuth(PLANET_API_KEY, '')
+# HTTPBasicAuth() wants a username & password; you can pass an empty string for the password
+
+    res = requests.get(url=BASE_URL, auth=auth)
+
+      print(res.status_code)
+# make a request to the Basemaps API and test the response
+
+    
