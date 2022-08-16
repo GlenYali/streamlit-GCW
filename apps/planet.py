@@ -7,7 +7,6 @@ def app():
 
     st.title("Planet Imagery")
 
-
     os.environ["31848fad673b405f9c7eee934f1d2ad3"] = "12345"
     tile_format = "ipyleaflet"
 
