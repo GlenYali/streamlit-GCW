@@ -1,4 +1,5 @@
 import os
+import requests
 import leafmap
 import leafmap.foliumap as leafmap
 import streamlit as st
@@ -9,6 +10,8 @@ def app():
 
     os.environ["31848fad673b405f9c7eee934f1d2ad3"] = "12345"
     tile_format = "ipyleaflet"
+    
+    BASE_URL = 'https://api.planet.com/basemaps/v1/mosaics'
 
     if os.environ.get("USE_FOLIUM") is not None:
         tile_format = "folium"
@@ -17,5 +20,11 @@ def app():
         for tile in monthly_tiles:
             print(tile)
 
+        auth = HTTPBasicAuth(PLANET_API_KEY, '')
+        
+        res = requests.get(url=BASE_URL, auth=auth)
+
+            print(res.status_code)
+        
     m = leafmap.Map()
     m.add_planet_by_month(year=2022, month=7, api_key="31848fad673b405f9c7eee934f1d2ad3")
