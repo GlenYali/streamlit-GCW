@@ -1,4 +1,5 @@
 import os
+import leafmap
 import leafmap.foliumap as leafmap
 import streamlit as st
 
