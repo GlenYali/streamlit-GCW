@@ -1,6 +1,4 @@
 import os
-import requests
-import leafmap
 import leafmap.foliumap as leafmap
 import streamlit as st
 
