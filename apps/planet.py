@@ -1,6 +1,6 @@
-import leafmap.foliumap as leafmap
-import streamlit as st
 import os
+import leafmap
+import streamlit as st
 
 def app():
 
