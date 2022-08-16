@@ -18,5 +18,5 @@ def app():
 
     m = leafmap.Map()
     m.add_planet_by_month(year=2022, month=7, api_key="31848fad673b405f9c7eee934f1d2ad3")
-
+    m
     
