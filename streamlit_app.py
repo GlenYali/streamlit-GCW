@@ -37,7 +37,7 @@ with st.sidebar:
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This geospatial web app is provides data visualization for the purpose Geospatial Coral Watch (GeoCoW) and was adopted from [Qiusheng Wu](https://github.com/giswqs). 
+        This geospatial web app provides data visualization for the purpose Geospatial Coral Watch (GeoCoW) and was adopted from [Qiusheng Wu](https://github.com/giswqs). 
     """
     )
 
