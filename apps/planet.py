@@ -6,7 +6,7 @@ def app():
 
     st.title("Planet Imagery")
 
-    os.environ["31848fad673b405f9c7eee934f1d2ad3"] = "12345"
+    os.environ["PLANET_API_KEY"] = "12345"
     tile_format = "ipyleaflet"
 
     if os.environ.get("USE_FOLIUM") is not None:
@@ -17,6 +17,6 @@ def app():
             print(tile)
 
     m = leafmap.Map()
-    m.add_planet_by_month(year=2022, month=7, api_key="31848fad673b405f9c7eee934f1d2ad3")
+    m.add_planet_by_month(year=2022, month=7, api_key="PLANET_API_KEY")
     
     
