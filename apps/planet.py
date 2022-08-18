@@ -5,11 +5,15 @@ import streamlit as st
 def app():
 
     st.title("Planet Imagery")
+    
+    os.getenv('PL_API_KEY') = "12345"
         
-    os.environ["PL_API_KEY"] = "12345"
+    #os.environ["PL_API_KEY"] = "12345"
     tile_format = "ipyleaflet"
 
-    if os.environ.get("USE_FOLIUM") is not None:
+    if os.getenv("USE_FOLIUM") is not None:
+    
+    #if os.environ.get("USE_FOLIUM") is not None:
         tile_format = "folium"
         # leafmap.planet_monthly()
         monthly_tiles = leafmap.planet_monthly_tiles(tile_format=tile_format)
