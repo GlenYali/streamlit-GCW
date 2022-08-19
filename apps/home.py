@@ -7,7 +7,7 @@ def app():
 
     st.markdown(
         """
-    A streamlit app for geospatial applications based on [streamlit-option-menu](https://github.com/victoryhb/streamlit-option-menu). 
+    #A streamlit app for geospatial applications based on [streamlit-option-menu](https://github.com/victoryhb/streamlit-option-menu). 
     
     """
     )
