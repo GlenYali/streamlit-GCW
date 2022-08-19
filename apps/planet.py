@@ -5,7 +5,14 @@ import streamlit as st
 def app():
 
     st.title("Planet Imagery")
-        
+    
+    st.write("PL_API_KEY", st.secrets["PL_API_KEY"])
+    
+    st.write(
+    "Has environment variables been set:",
+    os.environ["PL_API_KEY"] == st.secrets["PL_API_KEY"],
+)
+    
     os.environ["PL_API_KEY"] = "12345"
     tile_format = "ipyleaflet"
     
