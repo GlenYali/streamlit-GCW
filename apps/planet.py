@@ -10,10 +10,7 @@ def app():
     st.write(
     "Has environment variables been set:",
     os.environ["PL_API_KEY"] == st.secrets["PL_API_KEY"],
-)   
-    
-    PLANET_API_KEY = os.getenv('PL_API_KEY')
-    # Setup the API Key from the `PL_API_KEY` environment variable
+)  
 
     BASE_URL = 'https://api.planet.com/basemaps/v1/mosaics'
     res = requests.get(url=BASE_URL)
