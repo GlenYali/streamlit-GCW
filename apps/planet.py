@@ -9,14 +9,14 @@ def app():
     
     st.write(
     "Has environment variables been set:",
-    os.environ["PL_API_KEY"] == st.secrets["PL_API_KEY"],
+    os.environ["PLANET_API_KEY"] == st.secrets["PLANET_API_KEY"],
 )  
 
     BASE_URL = 'https://api.planet.com/basemaps/v1/mosaics'
     res = requests.get(url=BASE_URL)
 
     
-    os.environ["PL_API_KEY"] = "12345"
+    os.environ["PLANET_API_KEY"] = "12345"
     tile_format = "ipyleaflet"
     
     if os.environ.get("USE_FOLIUM") is not None:
@@ -27,7 +27,7 @@ def app():
             print(tile)
 
     m = leafmap.Map()
-    m.add_planet_by_month(year=2022, month=7, api_key="PL_API_KEY")
+    m.add_planet_by_month(year=2022, month=7, api_key="PLANET_API_KEY")
     
    
 
